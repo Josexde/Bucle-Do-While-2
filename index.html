@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+    <script>
+        function sumarHastaNumero() {
+            let numero = parseInt(prompt("Ingrese un número del 0 al 100"));
+            let resultado = document.getElementById("resultado");
+
+            if (isNaN(numero) || numero < 0 || numero > 100) {
+                resultado.innerHTML = "Por favor, ingrese un número válido entre 0 y 100.";
+                return;
+            }
+
+            let suma = 0;
+            let expresion = "";
+
+            for (let i = 0; i <= numero; i++) {
+                suma += i;
+                expresion += i;
+                if (i < numero) {
+                    expresion += "+";
+                }
+            }
+
+            resultado.innerHTML = `${expresion} = ${suma}`;
+        }
+
+        window.onload = sumarHastaNumero;
+    </script>
+</head>
+<body>
+    <div id="resultado" style="font-size: 20px; padding: 20px;"></div>
+</body>
+
+</head> 
+</html>
